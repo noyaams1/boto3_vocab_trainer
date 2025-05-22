@@ -1,4 +1,4 @@
-from handle_vocab_file import vocab, save_vocab, filename
+from handle_vocab_file import vocab, save_vocab, s3_client, filename, bucket_name
 from validation import input_formatting
 
 
@@ -14,7 +14,7 @@ def add_word(vocab, unit, word, meaning):
             print(f"The word '{word}' already exists in {unit}")
             return None
     vocab[unit].append(new_word)
-    save_vocab(vocab, filename)
+    save_vocab(s3_client, vocab, filename, bucket_name)
     print(f"Added '{word}' to {unit}")
 
 
@@ -28,7 +28,7 @@ def delete_word(vocab, unit, word):
     for words in vocab[unit]:
         if word == words["word"]:
             vocab[unit].remove(words)
-            save_vocab(vocab, filename)
+            save_vocab(s3_client, vocab, filename, bucket_name)
             print(f"{word} deleted from {unit}")
             return
     print(f"{word} not found in {unit}")
@@ -47,7 +47,7 @@ def update_word(vocab, unit, old_word, new_word, new_meaning):
             print(f"Modifying {old_word} in {unit}")
             words["word"] = new_word
             words["meaning"] = new_meaning
-            save_vocab(vocab, filename)
+            save_vocab(s3_client, vocab, filename, bucket_name)
             return
     print(f"{old_word} not found in {unit}")
 
