@@ -1,6 +1,6 @@
-# Hebrew Vocabulary Trainer 🇮🇱
+# 📘 Vocabulary Trainer
 
-A comprehensive command-line vocabulary training application for learning Hebrew words with English translations. The application includes editing, training, and testing modes with AWS S3 integration for data persistence.
+A console-based Python application for helping students learn and memorize English words, organized by textbook units. The application includes editing, training, and testing modes with AWS S3 integration for data persistence.
 
 ## Features ✨
 
@@ -39,10 +39,10 @@ A comprehensive command-line vocabulary training application for learning Hebrew
 
 1. **Clone or download the repository**
    ```bash
-   git clone <repository-url>
-   cd hebrew-vocab-trainer
+   git clone https://github.com/noyaams1/boto3_vocab_trainer
+   cd boto3_vocab_trainer
    ```
-
+   
 2. **Install required dependencies**
    ```bash
    pip install boto3
@@ -81,7 +81,7 @@ hebrew-vocab-trainer/
 
 ### Starting the Application
 ```bash
-python main.py
+   python main.py
 ```
 
 ### Main Menu Options
@@ -109,47 +109,6 @@ Edit `s3.py` to customize:
 - **Repetitions**: 7 rounds
 - **Randomization**: Enabled by default
 
-## Download Links 📥
-
-### Option 1: Individual Files
-Download each file individually:
-
-- [`main.py`](./main.py) - Main application
-- [`menus.py`](./menus.py) - Menu system
-- [`editing_mode.py`](./editing_mode.py) - Editing functions
-- [`training_func.py`](./training_func.py) - Training functions
-- [`testing_func.py`](./testing_func.py) - Testing functions
-- [`handle_vocab_file.py`](./handle_vocab_file.py) - File operations
-- [`s3.py`](./s3.py) - AWS S3 integration
-- [`validation.py`](./validation.py) - Input validation
-- [`vocab_hebrew.json`](./vocab_hebrew.json) - Sample vocabulary
-
-### Option 2: Complete Package
-```bash
-# Create a new directory
-mkdir hebrew-vocab-trainer
-cd hebrew-vocab-trainer
-
-# Download all files (replace with your actual file URLs)
-curl -O <base-url>/main.py
-curl -O <base-url>/menus.py
-curl -O <base-url>/editing_mode.py
-curl -O <base-url>/training_func.py
-curl -O <base-url>/testing_func.py
-curl -O <base-url>/handle_vocab_file.py
-curl -O <base-url>/s3.py
-curl -O <base-url>/validation.py
-curl -O <base-url>/vocab_hebrew.json
-```
-
-### Option 3: GitHub Repository
-If hosted on GitHub:
-```bash
-git clone https://github.com/yourusername/hebrew-vocab-trainer.git
-```
-
-## API Reference 📚
-
 ### Key Functions
 
 #### Editing Functions
@@ -168,27 +127,6 @@ git clone https://github.com/yourusername/hebrew-vocab-trainer.git
 - `test(vocab, unit)` - Run vocabulary quiz
 - `get_feedback(score)` - Provide performance feedback
 
-## Troubleshooting 🔧
-
-### Common Issues
-
-1. **AWS Credentials Error**
-   - Ensure AWS credentials are properly configured
-   - Check IAM permissions for S3 access
-
-2. **File Not Found Error**
-   - Ensure `vocab_hebrew.json` exists in the same directory
-   - Check file permissions
-
-3. **Import Errors**
-   - Verify all Python files are in the same directory
-   - Install required dependencies: `pip install boto3`
-
-4. **S3 Upload Failures**
-   - Check internet connection
-   - Verify bucket permissions
-   - Ensure region is correctly set
-
 ## Contributing 🤝
 
 Feel free to contribute to this project by:
@@ -202,15 +140,3 @@ Feel free to contribute to this project by:
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## Support 💬
-
-For questions or support:
-- Create an issue in the repository
-- Contact the developer
-- Check the troubleshooting section above
-
----
-
-**Happy Learning! 🎉**
-
-*Master Hebrew vocabulary one word at a time!*
